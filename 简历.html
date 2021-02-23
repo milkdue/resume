@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei";
+        }
+
+        body{
+            background-color: rgba(57, 57, 77);
+        }
+
+        .wrap{
+            width: 820px;
+            /* height: 800px; */
+            background-color: #fff;
+            margin: 20px auto;
+            padding-bottom: 40px;
+        }
+
+        #header{
+            width: 100%;
+            height: 82px;
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+
+        .header-left{
+            float: left;
+            width: 640px;
+            height: 100%;
+            padding: 15px 0;
+        }
+        .header-right{
+            float: right;
+            width: 100px;
+            height: 100%;
+            /* background-color: red; */
+        }
+
+        .header-left-left{
+            float: left;
+            width: 169px;
+            height: 52px;
+            /* background-color: red; */
+            border-right: 2px solid #4e7282;
+            padding-right: 15px;
+        }
+
+        .header-left-left span{
+            font-size: 38px;
+            line-height: 52px;
+            color: rgb(78, 114, 130);
+        }
+
+        .header-left-right{
+            float: left;
+            width: 205px;
+            height: 52px;
+            padding-left: 15px;
+            /* background-color: skyblue; */
+        }
+
+        .header-left-right p:first-child{
+            width: 190px;
+            height: 26px;
+            color: #4e7282;
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        .header-left-right p:last-child{
+            white-space: nowrap;
+            width: 190px;
+            height: 26px;
+            color: #4e7282;
+            font-size: 24px;
+            line-height: 26px;
+        }
+
+        .header-right-bottom{
+            /* 82 - 15 = 67  67 - 40 = 27 */
+            width: 100px;
+            height: 40px;
+            /* background-color: yellow; */
+            margin-top: 27px;
+        }
+
+        .header-right-bottom-university, .header-right-bottom-hat{
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            border-radius: 50%;
+            background-color: #c19f67;
+        }
+
+        .header-right-bottom-hat > span, .header-right-bottom-university > span{
+            display: block;
+            font-size: 30px;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .header-right-bottom-university > span{
+            font-weight: 400;
+            font-size: 24px;
+            
+        }
+
+        .session{
+            width: 100%;
+            height: 18px;
+            /* background-color: #4e7282; */
+        }
+
+        .session-left{
+            float: left;
+            position: relative;
+            width: 496px;
+            height: 100%;
+            background-color: #4e7282;
+        }
+
+        .session-left::after{
+            content: "";
+            position: absolute;
+            border-width: 18px 0 0 18px;
+            border-style: solid;
+            border-color: transparent transparent transparent #4e7282;
+            left: 100%;
+            bottom: 0;
+        }
+
+        .session-right{
+            position: relative;
+            float: right;
+            width: 300px;
+            height: 100%;
+            border-bottom: 12px solid  #c19f67;
+        }
+
+        .session-right::before{
+            position: absolute;
+            content: "";
+            border-width: 12px 0 0 12px;
+            border-style: solid;
+            border-color: #c19f67 transparent transparent transparent;
+            right: 100%;
+            bottom: -12px;
+        }
+
+        main{
+            margin: 0 30px 0 40px;
+            padding-top: 8px;
+            height: 100%;
+            border-left: 1px solid #4e7282;
+        }
+
+        .resume-content{
+            padding-top: 28px;
+            position: relative;
+        }
+
+
+        .content{
+            padding: 20px 20px 16px;
+            /* background-color: red; */
+            min-height: 90px;
+        }
+
+        .line{
+            position: absolute;
+            border-top: 1px solid #999;
+            width: 100%;
+            left: 0;
+            top: 28px;
+        }
+
+        .title{
+            position: absolute;
+            min-width: 140px;
+            height: 24px;
+            top: 4px;
+            left: -16px;
+            background-color: #4e7282;
+            color: #fff;
+        }
+
+        .title::before{
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-width: 9px 0 0 16px;
+            border-color: #4e7282 transparent transparent transparent;
+            left: 0;
+            top: 100%;
+        }
+
+        .title span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding-left: 25px;
+            padding-right: 50px;
+            color: #fff;
+            white-space: nowrap;
+            position: relative;
+            line-height: 24px;
+            font-size: 16px;
+        }
+        .title-right{
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            right: -1px;
+        }
+
+        .title-right::after{
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 50px;
+            right: 25px;
+            top: -12px;
+            border: 2px solid #fff;
+            transform: rotate(-45deg);
+        }
+
+        .title-right i{
+            display: block;
+            width: 27px;
+            height: 50px;
+            border-style: solid;
+            border-width: 26px 0 0 26px;
+            position: absolute;
+            right: -12px;
+            top: -18px;
+            transform: rotate(-45deg);
+        }
+
+        .info li{
+            float: left;
+            font-size: 13px;
+            min-width: 50%;
+            padding: 3px 5px 3px 0;
+            list-style: none;
+            color: #333;
+        }
+
+        .info li span{
+            display: inline-block;
+            min-width: 60px;
+            text-align-last: justify;
+        }
+
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+
+        img.photo{
+            position: absolute;
+            display: block;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .list-top{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list-top li{
+            min-width: 160px;
+            font-weight: 700;
+        }
+
+        .list-bottom li{
+            float: none;
+        }
+
+        .list-bottom li::before{
+            content: "\2022" !important;
+            margin-right: 4px;
+            text-align: center;
+            font-weight: 700;
+            color: #555;
+        }
+
+
+        .skill li span{
+            min-width: 80px;
+            text-align: left;
+        }
+
+        .progress-wrap{
+            display: inline-block;
+        }
+
+        .progress-mild{
+            width: 500px;
+            height: 6px;
+            background-color: #e3e3e3;
+            border-radius: 6px;
+        }
+
+        .progress-bar{
+            position: relative;
+            height: 6px;
+            margin-top: 4px;
+            border-radius: 6px;
+        }
+
+        .progress-bar::before{
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            background: #fff;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 6px;
+            opacity: 0;
+            animation: progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+        }
+
+        #html{
+            width: 80%;
+            background-color: #f5222d;
+        }
+
+        #css{
+            width: 70%;
+            background-color: #fa541c;
+        }
+
+        #js{
+            width: 60%;
+            background-color: #fadb14;
+        }
+
+        #react{
+            width: 50%;
+            background-color: #a0d911;
+        }
+
+        #java{
+            width: 60%;
+            background-color: #13c2c2;
+        }
+
+        #mysql{
+            width: 40%;
+            background-color: #722ed1;
+        }
+
+        #ssm{
+            width: 30%;
+            background-color: #eb2f96;
+        }
+
+        #springboot{
+            width: 40%;
+            background-color: #2f54eb;
+        }
+
+        #git{
+            width: 80%;
+            background-color: #ad4e00;
+        }
+
+        @keyframes progress-active{
+            0%{
+                opacity:.1;
+                width:0;
+            }
+
+            20%{
+                opacity:.5;
+                width:0;
+            }
+
+            to{
+                opacity:0;
+                width:100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="header-left">
+                <div class="header-left-left">
+                    <span>个人简历</span>
+                </div>
+                <div class="header-left-right">
+                    <p>细心从每一个小细节开始</p>
+                    <p>Personal resume</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-right-bottom">
+                    <div class="header-right-bottom-hat"><span class="iconfont icon-xueshimao"></span></div>
+                    <div class="header-right-bottom-university"><span class="iconfont icon-xuexiao2"></span></div>
+                </div>
+            </div>
+        </header>
+        <section class="session">
+            <div class="session-left"></div>
+            <div class="session-right"></div>
+        </section>
+
+        <main>
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>基本信息</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <ul>
+                            <li><span>姓名</span>: 李佩</li>
+                            <li><span>求职意向</span>: 前端工程师 / java工程师</li>
+                            <li><span>电话</span>: 15249152404</li>
+                            <li><span>邮箱</span>: <a href="mailto:321432896@qq.com">321432896@qq.com</a></li>
+                        </ul>
+                    </div>
+                    <img src="img/head.jpg" class="photo" alt="">
+                </div>
+            </div>
+
+
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>教育背景</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <div class="edu">
+                            <ul class="list-top">
+                                <li>2017-09 ~ 2021-06</li>
+                                <li>湘潭大学</li>
+                                <li>机械设计制造及其自动化</li>
+                            </ul>
+                        </div>
+                        <div class="grade">
+                            <ul class="list-bottom">
+                                <li>GPA: 2.875 / 4.0 （专业前30%）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>项目经历</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <div class="project-one">
+                            <ul class="list-top">
+                                <li>2020-11 ~ 2021-01</li>
+                                <li>商品管理系统</li>
+                            </ul>
+                            <div class="grade">
+                                <ul class="list-bottom">
+                                    <li>springboot + mybatis + react + mysql</li>
+                                    <li>负责使用antd ui组件库构建后台管理页面</li>
+                                    <li>封装axios对请求和响应拦截，并做超时处理</li>
+                                    <li>编写mybatis配置文件，使用ehcache缓存技术</li>
+                                    <li>react组件懒加载、错误边界处理和<a href="https://milkdue.github.io/#/react/?id=%e8%87%aa%e5%ae%9a%e4%b9%89%e7%bb%84%e4%bb%b6" target="_blank" style="text-decoration: underline;">自定义组件</a>等</li>
+                                    <li>商品信息(价格、库存等)处理</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-two" style="margin-top: 20px">
+                            <ul class="list-top">
+                                <li>2020-06 ~ 2020-08</li>
+                                <li>个人博客</li>
+                            </ul>
+                            <div class="grade">
+                                <ul class="list-bottom">
+                                    <li>springboot + mybatis + templates + mysql</li>
+                                    <li>负责使用semantic ui组件库构建前台和后台管理页面</li>
+                                    <li>使用jquery进行页面的交互，并集成Tocbot、prism等插件</li>
+                                    <li>编写mybatis配置文件，使用ehcache缓存技术</li>
+                                    <li>完成文章分类归档等业务逻辑</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>个人技能</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <div class="grade">
+                            <ul class="list-bottom skill">
+                                <li><span>html</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="html"></div></div></div><span style="margin-left: 30px">80%</span></li>
+                                <li><span>css</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="css"></div></div></div><span style="margin-left: 30px">70%</span></li>
+                                <li><span>js</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="js"></div></div></div><span style="margin-left: 30px">60%</span></li>
+                                <li><span>react</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="react"></div></div></div><span style="margin-left: 30px">50%</span></li>
+                                <li><span>java</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="java"></div></div></div><span style="margin-left: 30px">60%</span></li>
+                                <li><span>mysql</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="mysql"></div></div></div><span style="margin-left: 30px">40%</span></li>
+                                <li><span>ssm</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="ssm"></div></div></div><span style="margin-left: 30px">30%</span></li>
+                                <li><span>git</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="git"></div></div></div><span style="margin-left: 30px">80%</span></li>
+                                <li><span>springboot</span><div class="progress-wrap"><div class="progress-mild"><div class="progress-bar" id="springboot"></div></div></div><span style="margin-left: 30px">40%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>荣誉证书</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <div class="grade">
+                            <ul class="list-bottom">
+                                <li>计算机二级(C语言 优)</li>
+                                <li>计算机三级(网络技术 良)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-content">
+                <div class="content">
+                    <div class="title">
+                        <span>自我评价</span>
+                        <div class="title-right"><i></i></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="info">
+                        <div class="grade">
+                            <ul class="list-bottom">
+                                <li>对编程有浓厚的兴趣，有责任感，做事认真负责</li>
+                                <li>技能是资本，实践是基础，有较强的自学能力</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
